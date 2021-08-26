@@ -1,0 +1,24 @@
+apiVersion: skaffold/v2beta21
+kind: Config
+build:
+  artifacts:
+    - image: django-example 
+      sync:
+        manual:
+          - src: 'app.py'
+            dest: /usr/src/app
+          - src: 'tests.py'
+            dest: /user/src/app
+  local:
+    useBuildkit: true 
+    push: false
+deploy:
+  kubectl:
+    manifests:
+      - pod* 
+portForward:
+- resourceType: pod 
+  resourceName: django-example 
+  namespace: default 
+  port: 8000
+  localPort: 8000 
