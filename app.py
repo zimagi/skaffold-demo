@@ -35,6 +35,7 @@ class Character:
 characters = {
     1: Character("Rick Sanchez", 70),
     2: Character("Morty Smith", 14),
+    3: Character("Jace Beleron", 137),
 }
 
 
